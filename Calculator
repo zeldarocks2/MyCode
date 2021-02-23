@@ -1,0 +1,87 @@
+using System;
+
+namespace HelloWorld
+    
+{
+    class Program
+
+    {
+        static void Main(string[] args)
+        {
+            
+            Console.Write("Enter your first number:");
+            int numberOne = Convert.ToInt32(Console.ReadLine());
+            //Console.ReadLine();
+            Console.Write("Enter your second number:");
+            int numberTwo = Convert.ToInt32(Console.ReadLine());
+            //Console.ReadLine();
+            Console.WriteLine("Enter your operator: ");
+           string input = Console.ReadLine();
+            float op1 = numberOne + numberTwo;
+            float op2 = numberOne - numberTwo;
+            float op2Alt = numberTwo - numberOne;
+            float op3 = numberOne * numberTwo;
+            float op4 = numberOne / numberTwo;
+            float op4Alt = numberTwo / numberOne;
+            //initializes the variable op5 to 0
+            float op5 = 0;
+            //Checks to see if numberOne is larger than numberTwo
+            if (numberOne > numberTwo)
+            {
+                //When numberOne is larger than numberTwo, it will find the remainder
+                op5 = numberOne % numberTwo;
+            }
+            //Determines whether numberOne is smaller than numberTwo
+            else if (numberOne < numberTwo)
+            {
+                //Modular divides numberTwo and numberOne when the above condition is true
+                op5 = numberTwo % numberOne;
+            }
+            else
+            {
+                op5 = 0;
+            }
+            if (input == "+")
+            {
+                Console.WriteLine("The answer is: " + op1);
+            }
+            else if (input == "-")
+            {
+                Console.WriteLine("The answer is: " + op2);
+            }
+            else if (input == "*")
+            {
+                Console.WriteLine("The answer is: " + op3);
+            }
+            else if (input == "--")
+            {
+                Console.WriteLine("The answer is: " + op2Alt);
+            }
+            else if (input == "//")
+            {
+                Console.WriteLine("The answer is:" + op4Alt);
+            }
+            else if (input == "%")
+            {
+                Console.WriteLine("The answer is: " + op5);
+            }
+            //Divides the two inputs and gives a remainder
+            else if (input == "/")
+            {
+                
+                //This determines whether or not the remainder is 0
+                if(op5 != 0)
+                {
+                    Console.WriteLine("When divided, the answer is: " + op4 + " and the remainder is: " + op5);
+
+                }
+                //This occurs when there is no remainder
+                else 
+                {
+                    Console.WriteLine("When divided, the answer is: " + op4 + " and this selection has no remainder");
+                }
+            }
+        }
+           
+    }
+}
